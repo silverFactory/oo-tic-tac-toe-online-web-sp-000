@@ -18,6 +18,10 @@ class TicTacToe
     move.to_i - 1
   end
 
+  def move(move, char)
+  @board[move] = char
+end
+
 
   def current_player
   turn_count(@board) % 2 == 0 ? "X" : "O"
