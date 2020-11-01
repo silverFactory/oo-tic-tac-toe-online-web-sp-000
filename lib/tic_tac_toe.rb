@@ -79,7 +79,37 @@ count = 0
   end
   end
 end
+def full?
+  emptys = @board.detect do |index|
+           index == "" || index == " "
+         end
+  if emptys != nil
+    return false
+  else
+    return true
+  end
+end
 
+def draw?
+  if !won? && full?
+    return true
+  else
+    false
+  end
+end
+
+def over?
+  if won? || draw? || full?
+    return true
+  end
+end
+
+def winner
+  if won? == nil
+    return nil
+  end
+  @board[won?[0]]
+end
 def display_board
   puts " #{@board[0]} | #{@board[1]} | #{@board[2]} "
   puts "-----------"
