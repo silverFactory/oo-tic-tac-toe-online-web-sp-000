@@ -59,6 +59,27 @@ def turn
  display_board
 end
 
+def won?
+count = 0
+  until count > 7 do
+  #use count as a selecter for index of WIN_COMBINATIONS
+   win_array = WIN_COMBINATIONS[count]
+   board_array = []
+  #retrieve indexes from board that correspond to WIN_COMBINATIONS[i]
+    win_array.each do |index|
+      board_array << @board[index]
+    end
+  #if all x or o then game over (break)
+  if board_array == ["X", "X", "X"] || board_array == ["O", "O", "O"]
+    return win_array
+  else
+    #else reset board_array and increase count and try again
+      board_array = []
+      count += 1
+  end
+  end
+end
+
 def display_board
   puts " #{@board[0]} | #{@board[1]} | #{@board[2]} "
   puts "-----------"
