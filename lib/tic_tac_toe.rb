@@ -105,9 +105,7 @@ def over?
 end
 
 def winner
-  if won? == nil
-    return nil
-  end
+  won? == nil ? nil
   @board[won?[0]]
 end
 def display_board
