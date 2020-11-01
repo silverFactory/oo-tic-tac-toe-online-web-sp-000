@@ -30,6 +30,14 @@ def position_taken?(index)
   end
 end
 
+def valid_move?(index)
+ if index.between?(0, 8) && !position_taken?(@board, index)
+   true
+ else
+   false
+ end
+end
+
   def current_player
   turn_count(@board) % 2 == 0 ? "X" : "O"
 end
