@@ -14,6 +14,9 @@ class TicTacToe
     @board = Array.new (9, " ")
   end
 
+  def input_to_index(move)
+    move.to_i - 1
+  end
 
 
   def current_player
