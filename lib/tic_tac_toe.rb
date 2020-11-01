@@ -11,7 +11,7 @@ class TicTacToe
   [2, 4, 6]
 ]
   def initialize
-    @board = Array.new (9, " ")
+    @board = Array.new(9, " ")
   end
 
   def input_to_index(move)
